@@ -1,4 +1,5 @@
-# dpgconv
+dpgconv
+=======
 
 A python script to transcode video files to DPG format suitable for Nintendo DS (tm)
 
@@ -9,4 +10,5 @@ The software is released under the terms of
 
 Original homepage: http://theli.is-a-geek.org/blog/static/dpgconv
 
-
+This fork makes a small change to the code checking for mplayer and mencoder,
+so that it works, even if mplayer emits "Symbol `ff_codec_bmp_tags' has different size in shared object, consider re-linking".
