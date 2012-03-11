@@ -486,29 +486,26 @@ if options.dpg > 4:
 if options.dpg < 0:
 	options.dpg = 2
 
-test = commands.getoutput ( MPEG_STAT + " --" )
-m = re.compile ("mpeg_stat --(.*)").search(test)
+m = commands.getoutput ( "which " + MPEG_STAT )
 if m:
-	print m.group(0)
+	print "Using: " + m
 else:
 	print "Error:"
-	print test
+	print "Could not find " + MPEG_STAT
 	exit (0)
-test = commands.getoutput ( MPLAYER )
-m = re.compile ("^MPlayer.*").search(test)
+m = commands.getoutput ( "which " + MPLAYER )
 if m:
-	print m.group(0)
+	print "Using: " + m
 else:
 	print "Error:"
-	print test
+	print "Could not find " + MPLAYER
 	exit (0)
-test = commands.getoutput ( MENCODER)
-m = re.compile ("^MEncoder.*").search(test)
+m = commands.getoutput ( "which " + MENCODER )
 if m:
-	print m.group(0)
+	print "Using: " + m
 else:
 	print "Error:"
-	print test
+	print "Could not find " + MENCODER
 	exit (0)
 print "It seems we found all programs :)...continuing"
 print "______________________________________________"
